@@ -10,12 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
         'images/justin6.jpg'
     ];
     const targets = [];
-    const targetSize = 150; // Target size
-    const maxTargets = 10; // Ensure there are always 10 targets on the screen
+    const targetSize = 150;
+    const maxTargets = 10;
     let loveCounter = 0;
-
-    // Add the audio element
-    const clickSound = new Audio('sounds/vine-boom.mp3');
 
     function updateCounter() {
         document.getElementById('counter').innerText = `How much you love Justin: ${loveCounter}`;
@@ -76,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (this.opacity <= 0) {
                     clearInterval(fadeInterval);
                     this.opacity = 0;
-                    targets.splice(targets.indexOf(this), 1); // Remove target from array once it fades
+                    targets.splice(targets.indexOf(this), 1);
                 }
             }, 50);
         }
@@ -109,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             target.draw();
         });
 
-        maintainTargetCount(); // Ensure there are always 10 targets on the screen
+        maintainTargetCount();
         requestAnimationFrame(gameLoop);
     }
 
@@ -122,13 +119,16 @@ document.addEventListener('DOMContentLoaded', () => {
             if (target.isClicked(mouseX, mouseY)) {
                 loveCounter++;
                 updateCounter();
-                clickSound.play(); // Play the sound when a target is clicked
+
+                const clickSound = new Audio('sounds/vine-boom.mp3'); // New Audio instance
+                clickSound.play();
+
                 target.fadeOut();
             }
         });
     }
 
-    maintainTargetCount(); // Start with 10 targets
+    maintainTargetCount();
     canvas.addEventListener('click', handleMouseClick);
     gameLoop();
 });
