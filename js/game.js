@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const maxTargets = 10; // Ensure there are always 10 targets on the screen
     let loveCounter = 0;
 
+    // Add the audio element
+    const clickSound = new Audio('sounds/vine-boom.mp3');
+
     function updateCounter() {
         document.getElementById('counter').innerText = `How much you love Justin: ${loveCounter}`;
     }
@@ -119,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (target.isClicked(mouseX, mouseY)) {
                 loveCounter++;
                 updateCounter();
+                clickSound.play(); // Play the sound when a target is clicked
                 target.fadeOut();
             }
         });
