@@ -3,134 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Fun Website</title>
+    <title>Interactive Learning Wall</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Custom styles */
-        
-        /* Box Model example with border, padding, and margin */
-        .box-model-example {
-            background-color: lightblue;
-            border: 5px solid #000;
-            padding: 20px;
-            margin: 30px 0;
-        }
-        
-        /* Parent and Child with Flexbox */
-        .parent {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            background-color: #f8f9fa;
-            padding: 30px;
-            border: 3px solid #333;
-        }
-        .child {
-            width: 150px;
-            height: 150px;
-            background-color: coral;
-            text-align: center;
-            line-height: 150px;
-            font-size: 1.2em;
-            color: #fff;
-            border-radius: 10px;
-        }
-
-        /* Sticky element */
-        header {
-            position: sticky;
-            top: 0;
-            background-color: lightgreen;
-            padding: 10px;
-            font-size: 1.5em;
-            text-align: center;
-            z-index: 1000;
-        }
-
-        /* CSS Grid example */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 20px;
-        }
-        .grid-item {
-            background-color: lightcoral;
-            padding: 20px;
-            text-align: center;
-            border-radius: 8px;
-        }
-
-        /* Margin collapsing demo */
-        .margin-collapsing {
-            margin: 30px 0;
-            background-color: lightpink;
-            padding: 20px;
-            border: 2px solid red;
-        }
-    </style>
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Sticky Header -->
-<header>
-    Welcome to the Fun & Interactive Website
-</header>
+    <!-- Sticky Header -->
+    <h1 class="sticky-header">Weekly Interactive Learning</h1>
 
-<!-- Container Fluid Example -->
-<div class="container-fluid">
-    <h1 class="text-center">Hello, World!</h1>
-    <p class="text-center">This is a fully responsive fluid container.</p>
-</div>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar for Weekly Learning Containers -->
+            <div class="col-lg-3 col-md-4 col-sm-12 p-4 bg-light sidebar">
+                <h2>Topics</h2>
 
-<!-- Flexbox Parent-Child Example -->
-<div class="parent">
-    <div class="child">Child 1</div>
-    <div class="child">Child 2</div>
-    <div class="child">Child 3</div>
-</div>
+                <!-- Week 1 container -->
+                <div class="week-container" id="week1-container">
+                    <h4>Week 1: CSS Box Model</h4>
+                    <p>Learn about the CSS Box Model, including content, padding, border, and margin.</p>
+                </div>
 
-<!-- Margin Collapsing Example -->
-<div class="margin-collapsing">
-    <p>This div has a 30px top and bottom margin.</p>
-</div>
-<div class="margin-collapsing">
-    <p>This is another div with 30px margin, demonstrating margin collapsing!</p>
-</div>
+                <!-- Week 2 container -->
+                <div class="week-container" id="week2-container">
+                    <h4>Week 2: Flexbox</h4>
+                    <p>Explore Flexbox and how it helps in laying out flexible responsive structures.</p>
+                </div>
 
-<!-- Box Model Example -->
-<div class="box-model-example">
-    <h2>CSS Box Model Example</h2>
-    <p>This box demonstrates the CSS box model with padding, border, and margin.</p>
-</div>
+                <!-- Week 3 container -->
+                <div class="week-container" id="week3-container">
+                    <h4>Week 3: Grid Layout</h4>
+                    <p>Understand the Grid layout system for advanced web layouts.</p>
+                </div>
+            </div>
 
-<!-- Bootstrap Grid Example -->
-<div class="container">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h2>Responsive Bootstrap Grid</h2>
+            <!-- Right side: Demo area for learning -->
+            <div class="col-lg-9 col-md-8 col-sm-12 demo-container">
+                
+                <!-- Week 1 Demo: CSS Box Model -->
+                <div id="week1-demo" class="demo-content">
+                    <h2>CSS Box Model</h2>
+                    <p>Adjust the box model parameters and see the changes in real-time.</p>
+                    <div class="box-model-demo">
+                        <div class="content-box" id="interactive-box">Content</div>
+                    </div>
+                    <div class="box-controls">
+                        <label for="paddingRange">Padding: </label>
+                        <input type="range" id="paddingRange" min="0" max="50" value="20"> px
+                        <br>
+                        <label for="marginRange">Margin: </label>
+                        <input type="range" id="marginRange" min="0" max="50" value="10"> px
+                        <br>
+                        <label for="borderRange">Border Width: </label>
+                        <input type="range" id="borderRange" min="0" max="20" value="5"> px
+                    </div>
+                </div>
+
+                <!-- Week 2 Demo: Flexbox -->
+                <div id="week2-demo" class="demo-content" style="display:none;">
+                    <h2>Flexbox</h2>
+                    <p>Use the controls to change the flexbox alignment and distribution properties.</p>
+                    <div class="flex-demo">
+                        <div class="flex-container" id="flex-container">
+                            <div class="flex-item">1</div>
+                            <div class="flex-item">2</div>
+                            <div class="flex-item">3</div>
+                        </div>
+                    </div>
+                    <div class="flex-controls">
+                        <label for="justifyContent">Justify Content: </label>
+                        <select id="justifyContent">
+                            <option value="flex-start">flex-start</option>
+                            <option value="center">center</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="space-around">space-around</option>
+                            <option value="space-between">space-between</option>
+                        </select>
+                        <br>
+                        <label for="alignItems">Align Items: </label>
+                        <select id="alignItems">
+                            <option value="stretch">stretch</option>
+                            <option value="center">center</option>
+                            <option value="flex-start">flex-start</option>
+                            <option value="flex-end">flex-end</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Week 3 Demo: Grid Layout -->
+                <div id="week3-demo" class="demo-content" style="display:none;">
+                    <h2>Grid Layout</h2>
+                    <p>Control the number of columns in the grid layout using the slider.</p>
+                    <div class="grid-demo">
+                        <div class="grid-container" id="grid-container">
+                            <div class="grid-item">1</div>
+                            <div class="grid-item">2</div>
+                            <div class="grid-item">3</div>
+                            <div class="grid-item">4</div>
+                            <div class="grid-item">5</div>
+                            <div class="grid-item">6</div>
+                        </div>
+                    </div>
+                    <label for="gridColumns">Number of Columns: </label>
+                    <input type="range" id="gridColumns" min="1" max="6" value="3">
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row gx-0">
-        <div class="col-sm-6 col-lg-4">
-            <div class="grid-item">Grid Item 1</div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-            <div class="grid-item">Grid Item 2</div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-            <div class="grid-item">Grid Item 3</div>
-        </div>
-    </div>
-</div>
 
-<!-- Footer -->
-<footer class="container-fluid text-center py-4 mt-5" style="background-color: #f1f1f1;">
-    <p>&copy; 2024 Fun Interactive Website. All Rights Reserved.</p>
-</footer>
+    <!-- Audio element for background music -->
+    <audio id="background-music" autoplay loop>
+        <source src="bgm_Music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
-<!-- Bootstrap JS (Optional for interactive components) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript for Interaction -->
+    <script>
+        // Week containers (clickable)
+        const week1Container = document.getElementById('week1-container');
+        const week2Container = document.getElementById('week2-container');
+        const week3Container = document.getElementById('week3-container');
+
+        // Demo content divs
+        const week1Demo = document.getElementById('week1-demo');
+        const week2Demo = document.getElementById('week2-demo');
+        const week3Demo = document.getElementById('week3-demo');
+
+        // Add event listeners to containers to display corresponding demo
+        week1Container.addEventListener('click', () => {
+            showDemo(week1Demo);
+        });
+
+        week2Container.addEventListener('click', () => {
+            showDemo(week2Demo);
+        });
+
+        week3Container.addEventListener('click', () => {
+            showDemo(week3Demo);
+        });
+
+        // Function to hide all demos and show the selected one
+        function showDemo(demo) {
+            week1Demo.style.display = 'none';
+            week2Demo.style.display = 'none';
+            week3Demo.style.display = 'none';
+            demo.style.display = 'block';
+        }
+
+        // Background music controls
+        const music = document.getElementById('background-music');
+        music.volume = 0.5;  // Set volume to 50%
+
+        // Week 1 (CSS Box Model) Controls
+        const paddingRange = document.getElementById('paddingRange');
+        const marginRange = document.getElementById('marginRange');
+        const borderRange = document.getElementById('borderRange');
+        const interactiveBox = document.getElementById('interactive-box');
+
+        paddingRange.addEventListener('input', () => {
+            interactiveBox.style.padding = paddingRange.value + 'px';
+        });
+
+        marginRange.addEventListener('input', () => {
+            interactiveBox.style.margin = marginRange.value + 'px';
+        });
+
+        borderRange.addEventListener('input', () => {
+            interactiveBox.style.borderWidth = borderRange.value + 'px';
+        });
+
+        // Week 2 (Flexbox) Controls
+        const justifyContent = document.getElementById('justifyContent');
+        const alignItems = document.getElementById('alignItems');
+        const flexContainer = document.getElementById('flex-container');
+
+        justifyContent.addEventListener('change', () => {
+            flexContainer.style.justifyContent = justifyContent.value;
+        });
+
+        alignItems.addEventListener('change', () => {
+            flexContainer.style.alignItems = alignItems.value;
+        });
+
+        // Week 3 (Grid Layout) Controls
+        const gridColumns = document.getElementById('gridColumns');
+        const gridContainer = document.getElementById('grid-container');
+
+        gridColumns.addEventListener('input', () => {
+            gridContainer.style.gridTemplateColumns = `repeat(${gridColumns.value}, 1fr)`;
+        });
+    </script>
 </body>
 </html>
