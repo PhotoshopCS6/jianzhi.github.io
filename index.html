@@ -12,30 +12,48 @@
 <body>
 
     <!-- Sticky Header -->
-    <h1 class="sticky-header">Weekly Interactive Learning</h1>
+    <h1 class="sticky-header text-center bg-primary text-white py-3">Weekly Interactive Learning</h1>
 
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar for Weekly Learning Containers -->
             <div class="col-lg-3 col-md-4 col-sm-12 p-4 bg-light sidebar">
-                <h2>Topics</h2>
+                <h2 class="text-center">Topics</h2>
 
                 <!-- Week 1 container -->
-                <div class="week-container" id="week1-container">
+                <div class="week-container mb-4" id="week1-container">
                     <h4>Week 1: CSS Box Model</h4>
                     <p>Learn about the CSS Box Model, including content, padding, border, and margin.</p>
                 </div>
 
                 <!-- Week 2 container -->
-                <div class="week-container" id="week2-container">
+                <div class="week-container mb-4" id="week2-container">
                     <h4>Week 2: Flexbox</h4>
                     <p>Explore Flexbox and how it helps in laying out flexible responsive structures.</p>
                 </div>
 
                 <!-- Week 3 container -->
-                <div class="week-container" id="week3-container">
+                <div class="week-container mb-4" id="week3-container">
                     <h4>Week 3: Grid Layout</h4>
                     <p>Understand the Grid layout system for advanced web layouts.</p>
+                </div>
+
+                <!-- Week 4 container -->
+                <div class="week-container mb-4" id="week4-container">
+                    <h4>Week 4: JavaScript DOM & Event Handling</h4>
+                    <p>Explore JavaScript's DOM manipulation and event handling to create dynamic web content.</p>
+                </div>
+
+                <!-- Week 5 container -->
+                <div class="week-container mb-4" id="week5-container">
+                    <h4>Week 5: JavaScript APIs & Axios</h4>
+                    <p>Learn how to make asynchronous HTTP requests using JavaScript, JSON, and Axios.</p>
+                </div>
+
+                <!-- Week 6 container -->
+                <div class="week-container mb-4" id="week6-container">
+                    <h4>Week 6: Vue.js Basics</h4>
+                    <p>Understand Vue.js basics including instance creation, directives, and data binding.</p>
                 </div>
             </div>
 
@@ -47,34 +65,32 @@
                     <h2>CSS Box Model</h2>
                     <p>Adjust the box model parameters and see the changes in real-time.</p>
                     <div class="box-model-demo">
-                        <div class="content-box" id="interactive-box">Content</div>
+                        <div class="box example-box" id="interactive-box">Content Box</div>
                     </div>
                     <div class="box-controls">
                         <label for="paddingRange">Padding: </label>
-                        <input type="range" id="paddingRange" min="0" max="50" value="20"> px
+                        <input type="range" id="paddingRange" class="form-range" min="0" max="50" value="20"> px
                         <br>
                         <label for="marginRange">Margin: </label>
-                        <input type="range" id="marginRange" min="0" max="50" value="10"> px
+                        <input type="range" id="marginRange" class="form-range" min="0" max="50" value="10"> px
                         <br>
                         <label for="borderRange">Border Width: </label>
-                        <input type="range" id="borderRange" min="0" max="20" value="5"> px
+                        <input type="range" id="borderRange" class="form-range" min="0" max="20" value="5"> px
                     </div>
                 </div>
 
                 <!-- Week 2 Demo: Flexbox -->
                 <div id="week2-demo" class="demo-content" style="display:none;">
                     <h2>Flexbox</h2>
-                    <p>Use the controls to change the flexbox alignment and distribution properties.</p>
-                    <div class="flex-demo">
-                        <div class="flex-container" id="flex-container">
-                            <div class="flex-item">1</div>
-                            <div class="flex-item">2</div>
-                            <div class="flex-item">3</div>
-                        </div>
+                    <p>Use Flexbox to align and distribute items within a container.</p>
+                    <div class="flex-container example-box" id="flex-container">
+                        <div class="flex-item">Item 1</div>
+                        <div class="flex-item">Item 2</div>
+                        <div class="flex-item">Item 3</div>
                     </div>
                     <div class="flex-controls">
                         <label for="justifyContent">Justify Content: </label>
-                        <select id="justifyContent">
+                        <select id="justifyContent" class="form-select">
                             <option value="flex-start">flex-start</option>
                             <option value="center">center</option>
                             <option value="flex-end">flex-end</option>
@@ -83,7 +99,7 @@
                         </select>
                         <br>
                         <label for="alignItems">Align Items: </label>
-                        <select id="alignItems">
+                        <select id="alignItems" class="form-select">
                             <option value="stretch">stretch</option>
                             <option value="center">center</option>
                             <option value="flex-start">flex-start</option>
@@ -97,17 +113,41 @@
                     <h2>Grid Layout</h2>
                     <p>Control the number of columns in the grid layout using the slider.</p>
                     <div class="grid-demo">
-                        <div class="grid-container" id="grid-container">
+                        <div class="grid-container example-box" id="grid-container">
                             <div class="grid-item">1</div>
                             <div class="grid-item">2</div>
                             <div class="grid-item">3</div>
                             <div class="grid-item">4</div>
-                            <div class="grid-item">5</div>
-                            <div class="grid-item">6</div>
                         </div>
                     </div>
                     <label for="gridColumns">Number of Columns: </label>
-                    <input type="range" id="gridColumns" min="1" max="6" value="3">
+                    <input type="range" id="gridColumns" class="form-range" min="1" max="4" value="2">
+                </div>
+
+                <!-- Week 4 Demo: JavaScript DOM Manipulation -->
+                <div id="week4-demo" class="demo-content" style="display:none;">
+                    <h2>JavaScript DOM & Event Handling</h2>
+                    <p>Modify the DOM and handle events using JavaScript.</p>
+                    <button id="changeTextButton" class="btn btn-primary mb-3">Change Text</button>
+                    <p id="dom-text">Original Text</p>
+                </div>
+
+                <!-- Week 5 Demo: JavaScript APIs & Axios -->
+                <div id="week5-demo" class="demo-content" style="display:none;">
+                    <h2>JavaScript APIs & Axios</h2>
+                    <p>Learn how to make asynchronous requests to APIs using Axios.</p>
+                    <button id="fetchDataButton" class="btn btn-primary mb-3">Fetch Data from API</button>
+                    <div id="api-data" class="border p-3"></div>
+                </div>
+
+                <!-- Week 6 Demo: Vue.js Basics -->
+                <div id="week6-demo" class="demo-content" style="display:none;">
+                    <h2>Vue.js Basics</h2>
+                    <p>Explore the basics of Vue.js, including data binding and dynamic rendering.</p>
+                    <div id="vue-app" class="border p-3">
+                        <h4>{{ message }}</h4>
+                        <button class="btn btn-primary" @click="changeMessage">Change Message</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -120,80 +160,8 @@
     </audio>
 
     <!-- JavaScript for Interaction -->
-    <script>
-        // Week containers (clickable)
-        const week1Container = document.getElementById('week1-container');
-        const week2Container = document.getElementById('week2-container');
-        const week3Container = document.getElementById('week3-container');
-
-        // Demo content divs
-        const week1Demo = document.getElementById('week1-demo');
-        const week2Demo = document.getElementById('week2-demo');
-        const week3Demo = document.getElementById('week3-demo');
-
-        // Add event listeners to containers to display corresponding demo
-        week1Container.addEventListener('click', () => {
-            showDemo(week1Demo);
-        });
-
-        week2Container.addEventListener('click', () => {
-            showDemo(week2Demo);
-        });
-
-        week3Container.addEventListener('click', () => {
-            showDemo(week3Demo);
-        });
-
-        // Function to hide all demos and show the selected one
-        function showDemo(demo) {
-            week1Demo.style.display = 'none';
-            week2Demo.style.display = 'none';
-            week3Demo.style.display = 'none';
-            demo.style.display = 'block';
-        }
-
-        // Background music controls
-        const music = document.getElementById('background-music');
-        music.volume = 0.5;  // Set volume to 50%
-
-        // Week 1 (CSS Box Model) Controls
-        const paddingRange = document.getElementById('paddingRange');
-        const marginRange = document.getElementById('marginRange');
-        const borderRange = document.getElementById('borderRange');
-        const interactiveBox = document.getElementById('interactive-box');
-
-        paddingRange.addEventListener('input', () => {
-            interactiveBox.style.padding = paddingRange.value + 'px';
-        });
-
-        marginRange.addEventListener('input', () => {
-            interactiveBox.style.margin = marginRange.value + 'px';
-        });
-
-        borderRange.addEventListener('input', () => {
-            interactiveBox.style.borderWidth = borderRange.value + 'px';
-        });
-
-        // Week 2 (Flexbox) Controls
-        const justifyContent = document.getElementById('justifyContent');
-        const alignItems = document.getElementById('alignItems');
-        const flexContainer = document.getElementById('flex-container');
-
-        justifyContent.addEventListener('change', () => {
-            flexContainer.style.justifyContent = justifyContent.value;
-        });
-
-        alignItems.addEventListener('change', () => {
-            flexContainer.style.alignItems = alignItems.value;
-        });
-
-        // Week 3 (Grid Layout) Controls
-        const gridColumns = document.getElementById('gridColumns');
-        const gridContainer = document.getElementById('grid-container');
-
-        gridColumns.addEventListener('input', () => {
-            gridContainer.style.gridTemplateColumns = `repeat(${gridColumns.value}, 1fr)`;
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,95 +1,114 @@
+/* Global Styling */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 
-/* Overlay header */
-h1.overlay-header {
+.sticky-header {
+    background-color: #007bff;
+    color: white;
     text-align: center;
-    position: fixed;
-    width: 100%;
+    padding: 15px 0;
+    position: sticky;
     top: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    font-size: 2.5em;
-    z-index: 2000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    z-index: 1000;
 }
 
-/* Sidebar styles */
+/* Sidebar Styling */
 .sidebar {
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
     height: 100vh;
+    position: sticky;
+    top: 60px;
     overflow-y: auto;
 }
 
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
 .week-container {
-    padding: 15px;
-    border: 2px solid #007bff;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .week-container:hover {
-    background-color: #f0f8ff;
+    background-color: #f8f9fa;
 }
 
+/* Demo Area Styling */
 .demo-container {
-    padding: 20px;
+    padding: 40px;
+    background-color: #fff;
+    min-height: 100vh;
 }
 
-/* Week 1: CSS Box Model Demo */
-.box-model-demo {
-    padding: 20px;
+.demo-content {
+    display: none;
 }
 
-.content-box {
-    background-color: lightblue;
+#week1-demo {
+    display: block;
+}
+
+/* Example Styling */
+.example-box {
     padding: 20px;
-    border: 5px solid red;
-    margin: 10px;
-    width: 150px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    background-color: #f9f9f9;
     text-align: center;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Week 2: Flexbox Demo */
-.flex-demo {
-    display: flex;
-    justify-content: space-around;
-}
-
+/* Flexbox Styling */
 .flex-container {
     display: flex;
-    justify-content: space-around;
 }
 
 .flex-item {
-    background-color: lightgreen;
-    padding: 20px;
-    border: 2px solid black;
-    width: 80px;
+    padding: 10px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    flex: 1;
     text-align: center;
 }
 
-/* Week 3: Grid Layout Demo */
-.grid-demo {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-}
-
+/* Grid Layout Styling */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
 
 .grid-item {
-    background-color: lightcoral;
-    padding: 20px;
-    border: 2px solid black;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
     text-align: center;
+}
+
+/* JavaScript DOM Manipulation Styling */
+#dom-box {
+    width: 100px;
+    height: 100px;
+    background-color: lightgray;
+    margin-top: 10px;
+}
+
+/* Axios Examples */
+#api-data {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
 }
